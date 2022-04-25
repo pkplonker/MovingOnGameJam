@@ -18,7 +18,7 @@ namespace Stuart.Scripts.Enemy
             if (controller.PlayerInAttackRange())
             {
                 Debug.Log("in attack range");
-                controller.agent.SetDestination(controller.transform.position);
+                controller.agent.ResetPath();
                 
                 controller.ChangeState(controller.attackState);
             }

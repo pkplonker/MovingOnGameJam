@@ -25,7 +25,7 @@ namespace Stuart.Scripts
                 Debug.LogWarning("Cannot heal negative");
                 return;
             }
-            currentHealth -= amount;
+            currentHealth += amount;
             if (currentHealth > stats.maxHealth) currentHealth = stats.maxHealth;
             OnHealthChanged?.Invoke(currentHealth);
         }
@@ -38,7 +38,7 @@ namespace Stuart.Scripts
                 return;
             }
 
-            currentHealth += amount;
+            currentHealth -= amount;
             if (currentHealth <= 0)
             {
                 currentHealth = 0;

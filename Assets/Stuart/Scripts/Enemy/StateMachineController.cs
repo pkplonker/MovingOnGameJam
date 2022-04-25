@@ -1,16 +1,23 @@
 using System;
+using Stuart.Scripts.Projectiles;
 using Stuart.Scripts.SO;
 using Stuart.Scripts.SO.Character;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Stuart.Scripts.Enemy
 {
     [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(Damageable))]
+    [RequireComponent(typeof(ProjectileSpawner))]
+    
     public class StateMachineController : MonoBehaviour, IStateChange
     {
         private BaseState currentState;
         [SerializeField] private Transform target;
+        [SerializeField] Transform shootPoint;
+
         public NavMeshAgent agent { get; private set; }
         public BaseState idleState { get; private set; } = new IdleState();
         public BaseState chaseState { get; private set; } = new ChaseState();
@@ -19,16 +26,19 @@ namespace Stuart.Scripts.Enemy
         public float chaseRangeSqrMag { get; private set; }
         public float attackRangeSqrMag { get; private set; }
         private Damageable damageable;
+        public ProjectileSpawner projectileSpawner { get; private set; } 
         [Header("Stats")]
         
         public CombinedCharacterStats stats;
 
         public Transform GetTarget() => target;
+        public Transform GetShootPoint() => shootPoint;
         private void Awake()
         {
             agent = GetComponent<NavMeshAgent>();
             ChangeState(idleState);
             damageable = GetComponent<Damageable>();
+            projectileSpawner = GetComponent<ProjectileSpawner>();
         }
 
         private void OnEnable()
