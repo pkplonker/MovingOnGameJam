@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestEnemyCombat
   m_EditorClassIdentifier: 
   attackRadius: 4
-  attackSpeed: 1
+  attackSpeed: 0.2
   projectileData: {fileID: 11400000, guid: 1bd6b220f1dd3aa49a5085c58bae9e10, type: 2}

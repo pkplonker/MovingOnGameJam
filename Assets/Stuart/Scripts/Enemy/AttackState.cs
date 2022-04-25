@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Stuart.Scripts.Enemy
@@ -13,7 +14,11 @@ namespace Stuart.Scripts.Enemy
         public override void StateUpdate()
         {
             controller.agent.updateRotation = false;
-            Vector3.RotateTowards(controller.transform.position, controller.GetTarget().position,1000000,100000);
+            Vector3 direction = -(controller.transform.position - controller.GetTarget().position).normalized;
+            direction.y = 0;
+            controller.transform.rotation =
+                Quaternion.LookRotation(direction,
+                    controller.transform.up);
             //controller.agent.updateRotation = true;
             Debug.Log("Attack");
             if (Time.time - lastAttackTime > controller.stats.combat.attackSpeed)
