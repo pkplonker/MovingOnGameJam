@@ -1,8 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class BaseState
+namespace Stuart.Scripts.Enemy
 {
     
+    public abstract class BaseState
+    {
+        public abstract void StateEnter(StateMachineController controller);
+        public abstract BaseState StateUpdate();
+        public abstract void StateExit();
+
+    }
 }
