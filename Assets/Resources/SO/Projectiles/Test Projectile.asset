@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   speed: 5
-  isTracking: 1
+  isTracking: 0
   lifeTime: 3
   maxRange: 30
   prefab: {fileID: 8668684665097154822, guid: 45e7818113c73a64e9d0253d368adf5e, type: 3}

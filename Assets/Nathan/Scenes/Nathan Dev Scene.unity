@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1
   stats: {fileID: 11400000, guid: dcae3af3f894f054bb18107597fd3963, type: 2}
+  teamId: 0
 --- !u!136 &590560647
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 namespace Stuart.Scripts.Enemy
 {
-    public interface IStateChange
-    {
-        public void ChangeState(BaseState newState);
-    }
+	public interface IStateChange
+	{
+		public void ChangeState(BaseState newState);
+	}
 }
