@@ -27,6 +27,7 @@ namespace Stuart.Scripts.Enemy
 		private Damageable damageable;
 		public ProjectileSpawner projectileSpawner { get; private set; }
 		[Header("Stats")] public CombinedCharacterStats stats;
+		public Damageable enemyDamageable { get; private set; }
 
 		public int shooterTeam { get; private set; }
 
@@ -40,6 +41,7 @@ namespace Stuart.Scripts.Enemy
 			damageable = GetComponent<Damageable>();
 			projectileSpawner = GetComponent<ProjectileSpawner>();
 			shooterTeam = GetComponent<Damageable>().teamId;
+			enemyDamageable = target.GetComponent<Damageable>();
 		}
 
 		private void OnEnable()
@@ -84,6 +86,7 @@ namespace Stuart.Scripts.Enemy
 
 		public bool PlayerInAttackRange()
 		{
+			if (enemyDamageable.isDead) return false;
 			if (GenericMath.InRange(transform.position, GetTarget().position, attackRangeSqrMag)) //in range
 			{
 				Vector3 shotPos = shootPoint.position - new Vector3(0, 0.3f, 0);
@@ -102,7 +105,7 @@ namespace Stuart.Scripts.Enemy
 
 		public bool PlayerInChaseRange()
 		{
-			return GenericMath.InRange(transform.position, GetTarget().position, chaseRangeSqrMag);
+			return !enemyDamageable.isDead && GenericMath.InRange(transform.position, GetTarget().position, chaseRangeSqrMag);
 		}
 
 		private void Die()
