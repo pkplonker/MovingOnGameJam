@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc10b24f57abf654bb860fad8f4e986d, type: 3}
   m_Name: Character
   m_EditorClassIdentifier: 
+  characterName: Test Enemy
+  maxHealth: 100
+  detectionRadius: 20

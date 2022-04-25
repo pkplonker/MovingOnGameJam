@@ -7,17 +7,15 @@ namespace Stuart.Scripts.Enemy
        
         public override void StateEnter(StateMachineController controller)
         {
-            throw new System.NotImplementedException();
+            this.controller = controller;
         }
 
-        public override BaseState StateUpdate()
+        public override void StateUpdate()
         {
-            throw new System.NotImplementedException();
         }
 
         public override void StateExit()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

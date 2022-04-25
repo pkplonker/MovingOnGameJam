@@ -7,7 +7,7 @@ namespace Stuart.Scripts.SO
     public class CharacterStats : ScriptableObject
     {
         public string characterName = "New Character";
-      [Range(1,1000)]  public float maxHealth;
-   [Range(1,40)]   public float detectionRadius;
+      [Range(1,1000)]  public float maxHealth=100f;
+   [Range(1,40)]   public float detectionRadius=20f;
     }
 }

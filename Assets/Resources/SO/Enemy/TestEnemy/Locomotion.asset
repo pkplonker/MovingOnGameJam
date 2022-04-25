@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de12940dab51f8d4fb778037c4517596, type: 3}
   m_Name: Locomotion
   m_EditorClassIdentifier: 
+  movementSpeed: 5
+  angularSpeed: 1500
+  acceleration: 8
