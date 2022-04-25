@@ -13,7 +13,6 @@ namespace Stuart.Scripts.Enemy
 
         public override void StateUpdate()
         {
-            controller.agent.updateRotation = false;
             Vector3 direction = -(controller.transform.position - controller.GetTarget().position).normalized;
             direction.y = 0;
             controller.transform.rotation =
