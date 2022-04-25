@@ -24,7 +24,7 @@ namespace Stuart.Scripts.Enemy
             }
             else
             {
-                controller.SetDestination(controller.GetTarget().position);
+                controller.ChangeState(controller.idleState);
             }
         }
 
