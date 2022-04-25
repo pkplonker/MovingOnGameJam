@@ -8,6 +8,7 @@ namespace Stuart.Scripts.SO
         [Header("Basic")]
         public float damage;
         public float speed;
+        public bool isTracking = false;
         [Header("LifeTime")]
         public float lifeTime;
         public float maxRange;

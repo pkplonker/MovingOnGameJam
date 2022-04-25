@@ -8,11 +8,20 @@ namespace Stuart.Scripts.Projectiles
     {
         private ProjectileData data;
         private Vector3 direction;
-        public void InitProjectile(ProjectileData data, Vector3 direction)
+        private Vector3 startPos;
+        private Vector3 cachedTargetPos;
+        private Rigidbody rb;
+        private Transform target;
+        public void InitProjectile(ProjectileData data, Transform target)
         {
+            this.target = target;
             this.data = data;
-            this.direction = direction.normalized;
+            direction = target.position - transform.position;
+            direction = direction.normalized;
             Invoke(nameof(DestroyObject),data.lifeTime);
+            startPos = target.position;
+            rb = GetComponent<Rigidbody>();
+            cachedTargetPos = (target.position-transform.position ) * 1000;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -38,13 +47,15 @@ namespace Stuart.Scripts.Projectiles
 
         private void Update()
         {
-            
             HandleMovement();
+
         }
 
         protected virtual void HandleMovement()
         {
-          transform.position=  Vector3.Lerp(transform.position, transform.position + direction, data.speed*Time.deltaTime);
+            if (data.isTracking) transform.position=     Vector3.MoveTowards(transform.position, target.position, data.speed * Time.deltaTime);
+            else transform.position = Vector3.MoveTowards(transform.position, cachedTargetPos, data.speed * Time.deltaTime);
+            
         }
 
         private void HandleHitVFX()

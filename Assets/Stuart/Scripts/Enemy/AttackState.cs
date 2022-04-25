@@ -34,7 +34,7 @@ namespace Stuart.Scripts.Enemy
 
         public void Shoot()
         {
-            controller.projectileSpawner.SpawnProjectile(controller.GetShootPoint().position,controller.transform.forward, controller.stats.combat.projectileData);
+            controller.projectileSpawner.SpawnProjectile(controller.GetShootPoint().position,controller.GetTarget(), controller.stats.combat.projectileData);
         }
     }
 }

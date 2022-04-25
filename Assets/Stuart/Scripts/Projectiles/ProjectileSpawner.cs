@@ -5,11 +5,10 @@ namespace Stuart.Scripts.Projectiles
 {
     public class ProjectileSpawner : MonoBehaviour
     {
-        public void SpawnProjectile(Vector3 spawnPoint,Vector3 direction , ProjectileData data)
+        public void SpawnProjectile(Vector3 spawnPoint,Transform target , ProjectileData data)
         {
-            direction.Normalize();
             Debug.Log("Spawn projectile");
-           Instantiate(data.prefab, spawnPoint,Quaternion.identity,transform).GetComponent<Projectile>().InitProjectile(data,direction);
+           Instantiate(data.prefab, spawnPoint,Quaternion.identity).GetComponent<Projectile>().InitProjectile(data,target);
         }
     }
 }

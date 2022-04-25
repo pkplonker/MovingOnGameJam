@@ -218,7 +218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &416293149
 MonoBehaviour:
@@ -507,7 +507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf108eef7cfa6b43ad68304ca81a25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 1bd6b220f1dd3aa49a5085c58bae9e10, type: 2}
 --- !u!4 &1664979582
 Transform:
   m_ObjectHideFlags: 0
@@ -820,7 +819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1367940191552507964, guid: 4014b3f22c2d63643af7ded513a409c3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1367940191552507964, guid: 4014b3f22c2d63643af7ded513a409c3, type: 3}
       propertyPath: m_LocalPosition.x
