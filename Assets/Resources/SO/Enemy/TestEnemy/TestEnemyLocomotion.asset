@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc10b24f57abf654bb860fad8f4e986d, type: 3}
-  m_Name: Character
+  m_Script: {fileID: 11500000, guid: de12940dab51f8d4fb778037c4517596, type: 3}
+  m_Name: TestEnemyLocomotion
   m_EditorClassIdentifier: 
-  characterName: Test Enemy
-  maxHealth: 100
-  detectionRadius: 20
+  movementSpeed: 5
+  angularSpeed: 1500
+  acceleration: 8

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Stuart.Scripts.Enemy
 {
     public class DeathState : BaseState
@@ -9,6 +11,8 @@ namespace Stuart.Scripts.Enemy
 
         public override void StateUpdate()
         {
+            Debug.Log("Death");
+
         }
 
         public override void StateExit()

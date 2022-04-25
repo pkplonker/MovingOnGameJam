@@ -7,25 +7,25 @@ namespace Stuart.Scripts.Enemy
         public override void StateEnter(StateMachineController controller)
         {
             this.controller = controller;
+            controller.SetDestination(controller.transform.position);
+
         }
 
         public override void StateUpdate()
         {
-            if (PlayerInRange()!=null)
+            Debug.Log("Idle");
+            if (controller.PlayerInAttackRange())
             {
-                Debug.Log("in range");
+                Debug.Log("in attack range");
+                controller.ChangeState(controller.attackState);
+            }else if (controller.PlayerInChaseRange())
+            {
+                Debug.Log("in chase range");
+                controller.ChangeState(controller.chaseState);
             }
         }
 
-        private GameObject PlayerInRange()
-        {
-            if (!Physics.SphereCast(controller.transform.position, controller.stats.character.detectionRadius,
-                    Vector3.zero, out RaycastHit hit, 1, controller.GetPlayerLayer())) return null;
-            Debug.Log(hit.collider.gameObject);
-            return hit.collider.gameObject;
-
-        }
-
+    
         public override void StateExit()
         {
         }

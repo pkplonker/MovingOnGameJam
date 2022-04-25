@@ -12,6 +12,8 @@ namespace Stuart.Scripts.Enemy
 
         public override void StateUpdate()
         {
+            Debug.Log("Attack");
+
         }
 
         public override void StateExit()
