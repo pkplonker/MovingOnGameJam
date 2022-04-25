@@ -49,7 +49,8 @@ namespace Stuart.Scripts.Enemy
             agent.speed = stats.locomotion.movementSpeed;
             chaseRangeSqrMag = Mathf.Pow(stats.character.detectionRadius,2) ;
             attackRangeSqrMag = Mathf.Pow(stats.combat.attackRadius,2) ;
-            
+            gameObject.tag = "Enemy";
+
         }
         private void Update()
         {
@@ -65,6 +66,7 @@ namespace Stuart.Scripts.Enemy
 
         public void SetDestination(Vector3 destination)
         {
+            if (destination == agent.destination) return;
             agent.SetDestination(destination);
         }
        

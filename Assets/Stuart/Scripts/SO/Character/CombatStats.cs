@@ -7,5 +7,6 @@ namespace Stuart.Scripts.SO.Character
     public class CombatStats : ScriptableObject
     {
       [Range(1,15)]  public float attackRadius = 2f;
+      
     }
 }
