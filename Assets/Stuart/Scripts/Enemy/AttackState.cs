@@ -13,7 +13,10 @@ namespace Stuart.Scripts.Enemy
 
         public override void StateUpdate()
         {
-            Vector3 direction = -(controller.transform.position - controller.GetTarget().position).normalized;
+        
+         if (controller.PlayerInAttackRange())
+            {
+               Vector3 direction = -(controller.transform.position - controller.GetTarget().position).normalized;
             direction.y = 0;
             controller.transform.rotation =
                 Quaternion.LookRotation(direction,
@@ -25,6 +28,16 @@ namespace Stuart.Scripts.Enemy
                 lastAttackTime = Time.time;
                 Shoot();
             }
+            }else if (controller.PlayerInChaseRange())
+            {
+                Debug.Log("in chase range");
+                controller.ChangeState(controller.chaseState);
+            }else{
+                            controller.ChangeState(controller.idleState);
+}
+            
+            
+            
         }
 
         public override void StateExit()
