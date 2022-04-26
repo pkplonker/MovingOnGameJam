@@ -113,5 +113,10 @@ namespace Stuart.Scripts.Enemy
 		{
 			ChangeState(deathState);
 		}
+
+		public void DestroySelf()
+		{
+			Destroy(gameObject);
+		}
 	}
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2212631496250580872}
   - component: {fileID: 4129853457065290562}
   - component: {fileID: 1175932785587365147}
+  - component: {fileID: 6256271008131039404}
   m_Layer: 0
   m_Name: CorridorFloorGrate
   m_TagString: Untagged
@@ -86,6 +87,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1175932785587365147
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472708908236671639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 200, y: 28.13378, z: 200}
+  m_Center: {x: 0.0000038146973, y: 1.5668898, z: 0}
+--- !u!65 &6256271008131039404
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

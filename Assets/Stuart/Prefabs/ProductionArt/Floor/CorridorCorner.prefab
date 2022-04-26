@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3204218327915812909}
   - component: {fileID: 2006476791983167368}
   - component: {fileID: 4340492897576559426}
+  - component: {fileID: 9167364649555163389}
   m_Layer: 0
   m_Name: CorridorCorner
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9167364649555163389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827270160095085207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 200, y: 28.579517, z: 200.00006}
+  m_Center: {x: 0.0000038146973, y: 1.7897587, z: 0.00002670288}
