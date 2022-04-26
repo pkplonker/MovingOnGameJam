@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: be1bd3a9ee7f1e34292b9cb2c894e691, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a4b351539990b0d41aae9e4424c882a1, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4914,7 +4914,6 @@ GameObject:
   - component: {fileID: 1108297367}
   - component: {fileID: 1108297366}
   - component: {fileID: 1108297365}
-  - component: {fileID: 1108297368}
   m_Layer: 0
   m_Name: Player Camera (2)
   m_TagString: MainCamera
@@ -5001,18 +5000,6 @@ MonoBehaviour:
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
   sensitivity: 800
---- !u!114 &1108297368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108297363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1108297369
 Camera:
   m_ObjectHideFlags: 0
@@ -5023,7 +5010,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.15979888, g: 0.16736136, b: 0.1792453, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8843,15 +8830,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3803110785409567426, guid: 2f21dabb8c6802340aa1bb33b99f7cde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.763
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 3803110785409567426, guid: 2f21dabb8c6802340aa1bb33b99f7cde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.617
+      value: -1.297
       objectReference: {fileID: 0}
     - target: {fileID: 3803110785409567426, guid: 2f21dabb8c6802340aa1bb33b99f7cde, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.308
+      value: -2.989
       objectReference: {fileID: 0}
     - target: {fileID: 3803110785409567426, guid: 2f21dabb8c6802340aa1bb33b99f7cde, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8908,15 +8895,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6698782950419832013, guid: 1704c9300d5b4a448a170e656814814d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.52646
+      value: -17.526455
       objectReference: {fileID: 0}
     - target: {fileID: 6698782950419832013, guid: 1704c9300d5b4a448a170e656814814d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.859074
+      value: 12.859065
       objectReference: {fileID: 0}
     - target: {fileID: 6698782950419832013, guid: 1704c9300d5b4a448a170e656814814d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.8015935
+      value: 2.7951162
       objectReference: {fileID: 0}
     - target: {fileID: 6698782950419832013, guid: 1704c9300d5b4a448a170e656814814d, type: 3}
       propertyPath: m_LocalRotation.w
