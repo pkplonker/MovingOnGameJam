@@ -110,7 +110,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void GenerateBullet()
     {
-        projectileSpawnerScript.SpawnProjectile(transform.position, crosshairTarget, selectedWeapon.weaponTemplate.bulletData, 0);
+        projectileSpawnerScript.SpawnProjectile(transform.position, transform.forward, selectedWeapon.weaponTemplate.bulletData, 0);
     }
 
     void FixedUpdate()

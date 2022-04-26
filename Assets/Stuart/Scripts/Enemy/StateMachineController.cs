@@ -36,6 +36,7 @@ namespace Stuart.Scripts.Enemy
 
 		private void Awake()
 		{
+			if(target==null) Debug.LogError("YOU NEED A TARGET");
 			agent = GetComponent<NavMeshAgent>();
 			ChangeState(idleState);
 			damageable = GetComponent<Damageable>();
