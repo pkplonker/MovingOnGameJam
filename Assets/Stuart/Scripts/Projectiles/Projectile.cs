@@ -1,5 +1,6 @@
 using System;
 using Stuart.Scripts.SO;
+using Stuart.Scripts.SupportSystems;
 using UnityEngine;
 
 namespace Stuart.Scripts.Projectiles
@@ -67,7 +68,7 @@ namespace Stuart.Scripts.Projectiles
 
 		private void DestroyObject()
 		{
-			Destroy(gameObject);
+			ProjectileObjectPool.instance.ReturnObject(gameObject);
 		}
 	}
 }

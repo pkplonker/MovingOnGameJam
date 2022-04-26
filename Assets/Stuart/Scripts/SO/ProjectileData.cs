@@ -10,6 +10,7 @@ namespace Stuart.Scripts.SO
 		public bool isTracking = false;
 		[Header("LifeTime")] public float lifeTime;
 		public float maxRange;
-		[Header("Render")] public GameObject prefab;
+		[Header("Render")] public Mesh mesh;
+		public Material material;
 	}
 }
