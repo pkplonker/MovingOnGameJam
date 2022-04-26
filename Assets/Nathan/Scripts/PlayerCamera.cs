@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class PlayerCamera : MonoBehaviour
 {
-
-    public Vector3 cameraOffset; 
+    [SerializeField]
+    Vector3 cameraOffset; 
 
     [SerializeField]
     Vector3Variable playerPosition;
@@ -13,7 +14,8 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField]
     QuaternionVariable playerRotation;
 
-    public float sensitivity;
+    [SerializeField]
+    float sensitivity;
 
     Vector2 rotation;
     // Start is called before the first frame update
@@ -38,8 +40,13 @@ public class PlayerCamera : MonoBehaviour
         rotation.x -= mousePosition.y;
         rotation.x = Mathf.Clamp(rotation.x, -90f, 90f);
 
-        transform.position = playerPosition.Get() + cameraOffset;
+        
         transform.rotation = Quaternion.Euler(rotation.x, rotation.y, 0);
         playerRotation.Set(Quaternion.Euler(0, rotation.y, 0));
+    }
+
+    public void UpdateCameraPosition()
+    {
+        transform.position = playerPosition.Get() + cameraOffset;
     }
 }

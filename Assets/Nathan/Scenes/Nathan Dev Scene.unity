@@ -405,7 +405,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  playerSpeed: 5
+  playerWalkSpeed: 5
+  playerSprintSpeedMultiplier: 2
+  playerSprintDuration: 3
+  playerSprintCooldownMultiplier: 0.5
   playerMaxSpeed: 7
   playerJumpHeightCheck: 1.2
   groundDrag: 5
@@ -450,6 +453,7 @@ GameObject:
   - component: {fileID: 644795609}
   - component: {fileID: 644795608}
   - component: {fileID: 644795610}
+  - component: {fileID: 644795612}
   - component: {fileID: 644795611}
   - component: {fileID: 644795607}
   m_Layer: 0
@@ -513,7 +517,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &644795609
@@ -581,6 +585,34 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &644795612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644795606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb0c596f1a1e9c4cb06e26c2269aa53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 644795610}
+        m_TargetAssemblyTypeName: PlayerCamera, Assembly-CSharp
+        m_MethodName: UpdateCameraPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &684972508
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +705,7 @@ Transform:
   m_GameObject: {fileID: 684972508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 10, z: 2}
+  m_LocalScale: {x: 4, y: 10, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -900,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b595d4131366df2498738293d20b0f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: {fileID: 11400000, guid: 6fdcfa5d99b90b74d9b69ba9970c6f84, type: 2}
+  selectedWeapon: {fileID: 11400000, guid: 7a51c8d091039e149b7a9a022b9dbc2f, type: 2}
   crosshairTarget: {fileID: 780976208}
 --- !u!114 &908140563
 MonoBehaviour:
