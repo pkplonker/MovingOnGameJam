@@ -30,10 +30,10 @@ namespace Stuart.Scripts.Projectiles
 				Debug.Log("Tracking requires transform not vector");
 				DestroyObject();
 			}
-			direction = position - transform.position;
-			direction = direction.normalized;
-			Invoke(nameof(DestroyObject), data.lifeTime);
-			cachedTargetPos = (target.position - transform.position) * 1000;
+				direction = position - transform.position;
+				direction = direction.normalized;
+				Invoke(nameof(DestroyObject), data.lifeTime);
+				cachedTargetPos = (target.position - transform.position) * 1000;
 		}
 
 		private void OnTriggerEnter(Collider other)
