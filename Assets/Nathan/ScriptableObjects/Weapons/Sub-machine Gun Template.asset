@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7076741f735b547a62623568396891, type: 3}
   m_Name: Sub-machine Gun Template
   m_EditorClassIdentifier: 
-  weaponName: 
-  weaponFireMode: 0
-  weaponRateOfFire: 0
+  weaponName: Sub-machine Gun
+  weaponFireMode: 1
+  weaponRateOfFire: 0.4
   weaponManualFireDelay: 0
-  weapomSemiAutoDelay: 0
-  weaponSemiAutoBurstAmount: 0
-  weaponClipSize: 0
-  weaponClipReloadTime: 0
+  weapomSemiAutoDelay: 0.075
+  weaponSemiAutoBurstAmount: 3
+  weaponClipSize: 10
+  weaponClipReloadTime: 1.2
   bulletSpreadAngle: {x: 0, y: 0}
-  weaponModel: {fileID: 0}
-  bulletData: {fileID: 0}
+  weaponModel: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  bulletData: {fileID: 11400000, guid: 427fc49eac5b10e48bfeee5ff65a7e74, type: 2}

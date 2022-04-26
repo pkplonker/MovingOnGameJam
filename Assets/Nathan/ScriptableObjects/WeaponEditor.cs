@@ -8,7 +8,7 @@ public class WeaponEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        //base.OnInspectorGUI();
+        base.OnInspectorGUI();
         /*var script = (WeaponTemplate)target;
 
         script.weaponName = EditorGUILayout.TextField("Weapon Name", script.weaponName);
