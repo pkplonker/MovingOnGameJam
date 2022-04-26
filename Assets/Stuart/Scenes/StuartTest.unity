@@ -580,9 +580,13 @@ MonoBehaviour:
   jumpCooldown: 0.5
   jumpForce: 100
   airMultiplier: 0.4
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerSpeed: 5
   playerMaxSpeed: 7
   playerJumpHeightCheck: 0.7
+  groundDrag: 0
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
 --- !u!114 &1313461108
@@ -634,7 +638,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 86d7d57466c25aa48b46db6f6b94b098, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
