@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434911a0555a4b54b99702e0f18d981d, type: 3}
-  m_Name: Shotgun
+  m_Name: Player's Assault Rifle
   m_EditorClassIdentifier: 
-  weaponName: 
-  weaponFireMode: 0
-  weaponRateOfFire: 0
-  weaponManualFireDelay: 0
-  weapomSemiAutoDelay: 0
-  weaponSemiAutoBurstAmount: 0
-  weaponClipSize: 0
-  weaponClipReloadTime: 0
-  bulletSpreadAngle: {x: 0, y: 0}
-  bulletData: {fileID: 0}
+  weaponTemplate: {fileID: 11400000, guid: 4ad5cec3e17be884a81eda49e8a905ce, type: 2}
+  clipAmount: 45
+  ammoAmount: 0

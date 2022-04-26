@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434911a0555a4b54b99702e0f18d981d, type: 3}
-  m_Name: Assault Rifle
+  m_Name: Player's Sub-machine Gun
   m_EditorClassIdentifier: 
-  weaponName: Assault Rifle
-  weaponFireMode: 2
-  weaponRateOfFire: 0.1
-  weaponManualFireDelay: 0
-  weapomSemiAutoDelay: 0.05
-  weaponSemiAutoBurstAmount: 3
-  weaponClipSize: 45
-  weaponClipReloadTime: 1
-  bulletSpreadAngle: {x: 0, y: 0}
-  bulletData: {fileID: 0}
+  weaponTemplate: {fileID: 11400000, guid: 8381db828535f154ba1f6d54fc45dd59, type: 2}
+  clipAmount: 0
+  ammoAmount: 0

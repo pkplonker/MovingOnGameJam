@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Weapon))]
+[CustomEditor(typeof(WeaponTemplate))]
 public class WeaponEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
-        var script = (Weapon)target;
+        /*var script = (WeaponTemplate)target;
 
         script.weaponName = EditorGUILayout.TextField("Weapon Name", script.weaponName);
 
@@ -42,6 +42,10 @@ public class WeaponEditor : Editor
 
         EditorGUILayout.Space();
 
-        script.bulletData = (Stuart.Scripts.SO.ProjectileData)EditorGUILayout.ObjectField("Bullet Data", script.bulletData, typeof(Stuart.Scripts.SO.ProjectileData), false);
+        script.weaponModel = (Mesh)EditorGUILayout.ObjectField("Weapon Model", script.weaponModel, typeof(Mesh), true);
+
+        EditorGUILayout.Space();
+
+        script.bulletData = (Stuart.Scripts.SO.ProjectileData)EditorGUILayout.ObjectField("Bullet Data", script.bulletData, typeof(Stuart.Scripts.SO.ProjectileData), false);*/
     }
 }

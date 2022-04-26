@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7076741f735b547a62623568396891, type: 3}
+  m_Name: Assault Rifle Template
+  m_EditorClassIdentifier: 
+  weaponName: Assault Rifle
+  weaponFireMode: 2
+  weaponRateOfFire: 0.15
+  weaponManualFireDelay: 0
+  weapomSemiAutoDelay: 0
+  weaponSemiAutoBurstAmount: 0
+  weaponClipSize: 30
+  weaponClipReloadTime: 1
+  bulletSpreadAngle: {x: 0, y: 0}
+  weaponModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  bulletData: {fileID: 11400000, guid: 427fc49eac5b10e48bfeee5ff65a7e74, type: 2}

@@ -7,14 +7,6 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-
-    //Public int health;
-    //Public int maxHealth;
-
-    //Public float acceleration;
-    //Public float maximumVelocity;
-
     //Float jumpCooldownTime;
 
     //Private float currentVelocity;
@@ -66,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.rotation = playerRotation.Get();
     }
-
 
     bool OnGround()
     {
