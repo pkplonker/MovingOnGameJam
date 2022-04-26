@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1718,7 +1718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 786069507}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!65 &447679214
 BoxCollider:
@@ -4570,8 +4570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!20 &1108297369
 Camera:
   m_ObjectHideFlags: 0
@@ -5041,6 +5039,7 @@ GameObject:
   - component: {fileID: 1313461109}
   - component: {fileID: 1313461108}
   - component: {fileID: 1313461107}
+  - component: {fileID: 1313461113}
   - component: {fileID: 1313461106}
   - component: {fileID: 1313461105}
   m_Layer: 6
@@ -5116,7 +5115,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-  playerSpeed: 5
+  playerWalkSpeed: 0
+  playerSprintSpeedMultiplier: 0
+  playerSprintDuration: 0
+  playerSprintCooldownMultiplier: 0
   playerMaxSpeed: 7
   playerJumpHeightCheck: 0.7
   groundDrag: 0
@@ -5215,6 +5217,21 @@ Transform:
   m_Father: {fileID: 1661666887}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313461113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313461104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ae7f172f409044ab2c5a10d88f3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 858ebc203b73ee54aa3012b0db60cbe5, type: 2}
+  startColor: {r: 0, g: 1, b: 0, a: 1}
+  endColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1327961219
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ namespace Stuart.Scripts
 		public event Action OnDeath;
 		public int teamId = 1;
 
+		public float GetMaxHealth() => stats.maxHealth;
+		
 		private void Awake()
 		{
 			if (stats != null) currentHealth = stats.maxHealth;
