@@ -12,21 +12,23 @@ namespace Stuart.Scripts
         public void Settings()
         {
             Debug.Log("Open Settings");
-
         }
         
         public void Play()
         {
-            SceneManager.LoadScene("Level1", LoadSceneMode.Additive);
+            Debug.Log("Play");
+            SceneManager.LoadScene("Level1");
         }
 
         public void Highscores()
         {
-            Debug.Log("Open highscores");
+            Debug.Log("Open Highscores");
         }
 
         public void Exit()
         {
+            Debug.Log("Exit");
+
             Application.Quit();
         }
     }

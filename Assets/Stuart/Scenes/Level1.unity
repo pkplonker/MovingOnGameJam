@@ -1932,10 +1932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e14524ce1a1be429e6b53fad6fa474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeFactor: 1
-  killsFactor: 1
-  healthFactor: 1
+  level: 1
+  timeFactor: 150
+  killsFactor: 10
+  healthFactor: 10
   player: {fileID: 1026450218}
+  gameOverData: {fileID: 11400000, guid: 17b0af248353ff34ba14e6a74535f683, type: 2}
 --- !u!1001 &266957728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6488,15 +6490,26 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerWalkSpeed: 5
   playerSprintSpeedMultiplier: 2
   playerSprintDuration: 3
   playerSprintCooldownMultiplier: 0.5
+  playerWallRunningConsumptionMultiplier: 0
+  playerMaxSlopeAngle: 0
+  wallJumpUpForce: 0
+  wallJumpSideForce: 0
+  wallRunningCooldown: 0
   playerMaxSpeed: 7
   playerJumpHeightCheck: 1.2
+  playerWallDepthCheck: 0
   groundDrag: 5
+  playerActualSpeed: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
+  currentSlopeAngle: 0
 --- !u!114 &1026450218
 MonoBehaviour:
   m_ObjectHideFlags: 0
