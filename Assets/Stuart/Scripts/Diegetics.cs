@@ -9,10 +9,12 @@ namespace Stuart.Scripts
 		[SerializeField] private Material material;
 		public Color startColor;
 		public Color endColor;
-
+		[SerializeField] private LevelAesteticData levelAesteticData;
 		private void Awake()
 		{
 			damageable = GetComponent<Damageable>();
+			//startColor *= levelAesteticData.neonIntensity;
+			//endColor*=levelAesteticData.neonIntensity;
 		}
 
 		private void Start()
@@ -37,7 +39,7 @@ namespace Stuart.Scripts
 
 		private void ChangeWorldColor(Color newColor)
 		{
-			material.SetColor("_EmissionColor", newColor);
+			material.SetColor("_EmissionColor", newColor* levelAesteticData.neonIntensity);
 			material.color = newColor;
 		}
 

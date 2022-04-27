@@ -7,7 +7,11 @@ namespace Stuart.Scripts
 {
     public class MainMenu : MonoBehaviour
     {
-      
+        private void OnEnable()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
 
         public void Settings()
         {

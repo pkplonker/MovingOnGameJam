@@ -23,7 +23,11 @@ namespace Stuart.Scripts
         {
             SceneManager.LoadScene("MainMenu");
         }
-
+        private void OnEnable()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }   
         private void Start()
         {
             ScoreData latestScore = gameOverData.GetLatestScore();
