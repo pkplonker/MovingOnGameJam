@@ -9,7 +9,6 @@ using UnityEngine.AI;
 namespace Stuart.Scripts.Enemy
 {
 	[RequireComponent(typeof(NavMeshAgent))]
-	[RequireComponent(typeof(Damageable))]
 	[RequireComponent(typeof(ProjectileSpawner))]
 	public class StateMachineController : MonoBehaviour, IStateChange
 	{
