@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
+using Stuart.Scripts.SO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Stuart.Scripts
 {
     public class LevelController : MonoBehaviour
     {
-        private float startTime=0f;
+        private float startTime;
+        [SerializeField] private int level;
         [SerializeField] private float timeFactor = 1f;
         [SerializeField] private float killsFactor = 1f;
         [SerializeField] private float healthFactor = 1f;
         [SerializeField] private Damageable player;
         private List<EnemyDamageable> enemies = new List<EnemyDamageable>();
+        [SerializeField] private GameOverData gameOverData;
         private void Start()
         {
             startTime = Time.time;
@@ -33,18 +37,16 @@ namespace Stuart.Scripts
         }
 
         public void GameOver(bool isWin)
-       {
-           if (isWin) Win();
-           else Lose();
+        {
+            float timeTaken = TimeTaken();
+            float killsScore = KillsScore();
+            float healthScore = HealthScore();
+            float timeScore = TimeScore(timeTaken);
+            
+           gameOverData.AddScore(new ScoreData(isWin,level,killsScore,timeScore,healthScore,timeTaken));
        }
 
-       private void Win()
-       {
-           Debug.Log("YOU WIN");
-
-           float score = TimeScore(TimeTaken()) * KillsScore() * HealthScore();
-
-       }
+   
 
        private float HealthScore()
        {
@@ -63,18 +65,15 @@ namespace Stuart.Scripts
 
            int total = alive + dead;
            if (total == 0) return killsFactor;
-           return killsFactor * ((float)dead / total);
+           return (killsFactor * ((float)dead / total));
        }
 
        private float TimeScore(float timeTaken)
        {
-           return timeFactor / timeTaken;
+           return (timeFactor / timeTaken);
        }
 
-       private void Lose()
-       {
-           Debug.Log("YOU LOSE");
-       }
+    
        private float TimeTaken()
        {
            return Time.time - startTime;

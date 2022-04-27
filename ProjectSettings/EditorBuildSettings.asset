@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Stuart/Scenes/MainMenu.unity
+    guid: 3a87c19d1e6b2f8498c4a45317623466
+  - enabled: 1
+    path: Assets/Stuart/Scenes/Level1.unity
+    guid: 8b784b77340e9014ba2658eb1803a4af
+  - enabled: 0
+    path: Assets/Stuart/Scenes/StuartTest.unity
+    guid: 4feaea6b62874a340b3dadb31f47cdfa
+  - enabled: 0
+    path: Assets/Nathan/Scenes/Nathan Dev Scene.unity
+    guid: 7f19bc61df5e8ca43aca703aa7256793
+  - enabled: 0
+    path: Assets/Stuart/Scenes/LevelOverScreen.unity
+    guid: 4d06b01a3734c9a4cb387076e113e91d
   m_configObjects: {}
