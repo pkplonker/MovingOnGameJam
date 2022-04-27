@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4978039215144940096
 Transform:
@@ -89,6 +89,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorridorPiece (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6321321822494299798, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
 --- !u!4 &6413538124903515108 stripped
@@ -150,6 +154,10 @@ PrefabInstance:
     - target: {fileID: 6321321822494299798, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
       propertyPath: m_Name
       value: CorridorPiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321321822494299798, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
@@ -213,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorridorPiece (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6321321822494299798, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
 --- !u!4 &2723671324759133361 stripped
@@ -274,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 6321321822494299798, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
       propertyPath: m_Name
       value: CorridorPiece (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321321822494299798, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65dec78751646f3418da9c58c496eb9f, type: 3}

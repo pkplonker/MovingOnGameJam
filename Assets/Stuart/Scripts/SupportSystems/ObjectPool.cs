@@ -50,7 +50,6 @@ namespace Stuart.Scripts.SupportSystems
 	
 		public virtual GameObject GetObject(Vector3 position, Quaternion rotation, Object data=null)
 		{
-			GameObject objToReturn=null;
 			for (int i = 0; i < pooledObjects.Count; i++)
 			{
 				if (!pooledObjects[i].activeInHierarchy)

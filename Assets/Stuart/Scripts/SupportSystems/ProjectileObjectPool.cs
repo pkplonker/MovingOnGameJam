@@ -27,8 +27,15 @@ namespace Stuart.Scripts.SupportSystems
         {
            GameObject obj = base.GetObject(position, rotation);
            ProjectileData pData = (ProjectileData)data;
-           obj.GetComponent<MeshRenderer>().material = pData.material;
-           obj.GetComponent<MeshFilter>().mesh = pData.mesh;
+           if (obj.TryGetComponent(out MeshRenderer mr))
+           {
+               mr.material = pData.material;
+           }
+           if (obj.TryGetComponent(out MeshFilter mf))
+           {
+               mf.mesh = pData.mesh;
+           }
+         
            return obj;
         }
     }

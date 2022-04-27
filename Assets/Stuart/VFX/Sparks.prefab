@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6881914127562583253}
   - component: {fileID: 6881914127562583252}
   - component: {fileID: 6881914127562583243}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 3
-    scalar: 1
+    scalar: 4
     minScalar: 0
     maxCurve:
       serializedVersion: 2
