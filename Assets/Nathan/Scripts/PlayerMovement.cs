@@ -88,6 +88,10 @@ public class PlayerMovement : MonoBehaviour
     bool sprintButtonHeld;
     KeyCode sprintButtonKey = KeyCode.LeftShift;
 
+    bool crouchButtonHeld;
+    bool crouchButtonPrevious;
+    KeyCode crouchButtonKey = KeyCode.LeftControl;
+
     bool jumpCooldownDone;
     bool grounded;
 
@@ -100,6 +104,12 @@ public class PlayerMovement : MonoBehaviour
     bool verticalKeysPressed;
     bool horizontalKeysPressed;
     bool movementKeysPressed;
+
+    public float crouchScale;
+    public float crouchMultiplier;
+    bool crouchTransition;
+    public float crouchCooldown;
+    float crouchCooldownTimer;
 
     public float currentSlopeAngle;
 
@@ -149,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * jumpForce * (crouchButtonHeld ? crouchMultiplier : 1f), ForceMode.Impulse);
         jumpCooldownTimer = jumpCooldown;
     }
     void WallJump()
@@ -176,11 +186,26 @@ public class PlayerMovement : MonoBehaviour
         jumpButtonPressed = Input.GetKeyDown(jumpButtonKey);
 
         sprintButtonHeld = Input.GetKey(sprintButtonKey);
+
+        crouchButtonHeld = Input.GetKey(crouchButtonKey);
+
+        bool crouchCooldownDone = crouchCooldownTimer <= 0f;
+
+        if (crouchCooldownDone)
+        {
+            if (crouchButtonHeld != crouchButtonPrevious)
+            {
+                crouchTransition = true;
+            }
+
+            crouchButtonPrevious = crouchButtonHeld;
+        }
     }
 
     void ManageMovementState()
     {
         jumpCooldownDone = jumpCooldownTimer <= 0f;
+        
         grounded = OnGround();
         bool sprintDurationRemaining = sprintCooldownTimer > 0f;
         bool onWall = OnWall();
@@ -191,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
         bool playerSprinting = movementKeysPressed && sprintButtonHeld && canSprint;
         bool playerWalking = movementKeysPressed && grounded;
         bool playerJumping = jumpButtonPressed && canJump;
-        bool playerWallRunning = horizontalKeysPressed && verticalKeysPressed && onWall && sprintDurationRemaining && !grounded;
+        bool playerWallRunning = horizontalKeysPressed && verticalKeysPressed && onWall && sprintDurationRemaining && !grounded && !crouchButtonHeld;
 
         if (playerWallRunning)
         {
@@ -205,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
         else if (playerSprinting)
         {
             playerMoveState = MovementState.eSprinting;
-            playerSpeed = playerWalkSpeed * playerSprintSpeedMultiplier;
+            playerSpeed = playerWalkSpeed * playerSprintSpeedMultiplier * (crouchButtonHeld ? crouchMultiplier : 1f);
 
             sprintCooldownTimer -= Time.deltaTime;
 
@@ -214,7 +239,7 @@ public class PlayerMovement : MonoBehaviour
         else if (playerWalking)
         {
             playerMoveState = MovementState.eWalking;
-            playerSpeed = playerWalkSpeed;
+            playerSpeed = playerWalkSpeed * (crouchButtonHeld ? crouchMultiplier : 1f);
         }
         else
         {
@@ -237,6 +262,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (wallRunningCooldownTimer > 0f) wallRunningCooldownTimer -= Time.deltaTime;
+        if (crouchCooldownTimer > 0f) crouchCooldownTimer -= Time.deltaTime;
 
         bool playerIsNotSprinting = playerMoveState != MovementState.eSprinting;
         bool playerSprintNotRefilled = sprintCooldownTimer < playerSprintDuration;
@@ -258,6 +284,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.useGravity = true;
+
+        if (crouchTransition)
+        {
+
+            transform.localScale = new Vector3(transform.localScale.x, (crouchButtonHeld ? crouchScale : 1f), transform.localScale.z);
+            if (grounded) rb.AddForce(Vector3.down * 10f, ForceMode.Impulse);
+            crouchTransition = false;
+            crouchCooldownTimer += crouchCooldown;
+        }
 
         if (movementKeysPressed)
         {
@@ -282,7 +317,6 @@ public class PlayerMovement : MonoBehaviour
             { 
                 moveDirection = SlopeMovementDirection(moveDirection, slopeHit.normal);
             }
-
 
             rb.AddForce(moveDirection.normalized * playerSpeed * 10f, ForceMode.Force);
 
