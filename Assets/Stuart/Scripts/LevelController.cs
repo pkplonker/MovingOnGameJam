@@ -42,8 +42,7 @@ namespace Stuart.Scripts
             float killsScore = KillsScore();
             float healthScore = HealthScore();
             float timeScore = TimeScore(timeTaken);
-            
-           gameOverData.AddScore(new ScoreData(isWin,level,killsScore,timeScore,healthScore,timeTaken));
+            gameOverData.AddScore(new ScoreData(isWin,level,killsScore,timeScore,healthScore,timeTaken));
        }
 
    
@@ -59,8 +58,16 @@ namespace Stuart.Scripts
            int dead=0;
            foreach (var enemy in enemies)
            {
-               if (enemy == null) dead++;
-               else alive++;
+               if (enemy == null)
+               {
+                   if (TryGetComponent(out Damageable damageable))
+                   {
+                       if (damageable.isDead) dead++;
+                       else alive++;
+                   }
+                   else dead++;
+               }
+               else dead++;
            }
 
            int total = alive + dead;

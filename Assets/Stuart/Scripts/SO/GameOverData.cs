@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,8 +18,13 @@ namespace Stuart.Scripts.SO
             }
             scoreDatas.Add(data);
         }
+        public ScoreData GetLatestScore()
+        {
+            if (scoreDatas == null) return null;
+            return scoreDatas[scoreDatas.Count - 1];
+        }
     }
-
+[Serializable]
     public class ScoreData
     {
         public bool isWin;
@@ -31,7 +37,7 @@ namespace Stuart.Scripts.SO
         public ScoreData(bool isWin, int level, float killsScore, float timeScore, float healthScore, float timeTaken)
         {
             this.isWin = isWin;
-            this.overallScore = timeScore*killsScore*healthScore;
+            overallScore = timeScore*killsScore*healthScore;
             this.level = level;
             this.killsScore = killsScore;
             this.healthScore = healthScore;
@@ -39,5 +45,7 @@ namespace Stuart.Scripts.SO
             this.timeTaken = timeTaken;
             SceneManager.LoadScene("LevelOverScreen");
         }
+
+       
     }
 }
