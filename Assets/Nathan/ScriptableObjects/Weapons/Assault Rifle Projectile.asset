@@ -17,5 +17,5 @@ MonoBehaviour:
   isTracking: 0
   lifeTime: 3.3
   maxRange: 100
-  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: 13ce1ca1a2a28574e9cfed38093bbe1e, type: 2}
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 858ebc203b73ee54aa3012b0db60cbe5, type: 2}

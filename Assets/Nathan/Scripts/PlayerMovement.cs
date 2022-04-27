@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
 
     public LayerMask groundLayer;
+    public LayerMask wallLayer;
 
     float playerSpeed;
 
@@ -44,14 +45,29 @@ public class PlayerMovement : MonoBehaviour
     public float playerSprintDuration;
     public float playerSprintCooldownMultiplier;
 
+    public float playerWallRunningConsumptionMultiplier;
+
+    public float playerMaxSlopeAngle;
+
+    public float wallJumpUpForce;
+    public float wallJumpSideForce;
+
+    public float wallRunningCooldown;
+    float wallRunningCooldownTimer;
+
+    RaycastHit slopeHit;
+
     bool sprintCooldownDone;
     float sprintCooldownTimer;
 
     public float playerMaxSpeed;
 
     public float playerJumpHeightCheck;
+    public float playerWallDepthCheck;
 
     public float groundDrag;
+
+    public Vector3 playerActualSpeed;
 
     [SerializeField]
     Vector3Variable playerPosition;
@@ -75,7 +91,17 @@ public class PlayerMovement : MonoBehaviour
     bool jumpCooldownDone;
     bool grounded;
 
+    RaycastHit leftWallRaycastHit;
+    RaycastHit rightWallRaycastHit;
+
+    bool leftWallHit;
+    bool rightWallHit;
+
+    bool verticalKeysPressed;
+    bool horizontalKeysPressed;
     bool movementKeysPressed;
+
+    public float currentSlopeAngle;
 
     // Start is called before the first frame update
     void Start()
@@ -93,9 +119,48 @@ public class PlayerMovement : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, playerJumpHeightCheck, groundLayer);
     }
 
+    bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerJumpHeightCheck, groundLayer))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            currentSlopeAngle = angle;
+            return angle < playerMaxSlopeAngle && angle != 0;
+        }
+
+        return false;
+    }
+
+    bool OnWall()
+    {
+        rightWallHit = Physics.Raycast(transform.position, transform.right, out rightWallRaycastHit, playerWallDepthCheck, wallLayer);
+        leftWallHit = Physics.Raycast(transform.position, -transform.right, out leftWallRaycastHit, playerWallDepthCheck, wallLayer);
+
+        bool wallHit = (rightWallHit || leftWallHit);
+        bool wallRunningCooldownDone = wallRunningCooldownTimer <= 0f;
+
+        return wallHit && wallRunningCooldownDone;
+    }
+
+    Vector3 SlopeMovementDirection(Vector3 moveDirection, Vector3 slopeNormal)
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopeNormal).normalized;
+    }
+
     void Jump()
     {
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        jumpCooldownTimer = jumpCooldown;
+    }
+    void WallJump()
+    {
+        Vector3 wallNormal = rightWallHit ? rightWallRaycastHit.normal : leftWallRaycastHit.normal;
+
+
+        Vector3 jumpForce = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+
+        rb.AddForce(jumpForce, ForceMode.Impulse);
+        wallRunningCooldownTimer = wallRunningCooldown;
         jumpCooldownTimer = jumpCooldown;
     }
 
@@ -103,7 +168,10 @@ public class PlayerMovement : MonoBehaviour
     {
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        movementKeysPressed = (verticalInput != 0) || (horizontalInput != 0);
+
+        verticalKeysPressed = verticalInput != 0;
+        horizontalKeysPressed = horizontalInput != 0;
+        movementKeysPressed = verticalKeysPressed || horizontalKeysPressed;
 
         jumpButtonPressed = Input.GetKeyDown(jumpButtonKey);
 
@@ -114,13 +182,27 @@ public class PlayerMovement : MonoBehaviour
     {
         jumpCooldownDone = jumpCooldownTimer <= 0f;
         grounded = OnGround();
-
-        bool canJump = grounded && jumpCooldownDone;
         bool sprintDurationRemaining = sprintCooldownTimer > 0f;
+        bool onWall = OnWall();
 
         bool canSprint = grounded && sprintDurationRemaining;
+        bool canJump = (grounded || onWall) && jumpCooldownDone;
 
-        if (movementKeysPressed && sprintButtonHeld && canSprint)
+        bool playerSprinting = movementKeysPressed && sprintButtonHeld && canSprint;
+        bool playerWalking = movementKeysPressed && grounded;
+        bool playerJumping = jumpButtonPressed && canJump;
+        bool playerWallRunning = horizontalKeysPressed && verticalKeysPressed && onWall && sprintDurationRemaining && !grounded;
+
+        if (playerWallRunning)
+        {
+            playerMoveState = MovementState.eWallRunning;
+            playerSpeed = playerWalkSpeed;
+
+            sprintCooldownTimer -= Time.deltaTime * playerWallRunningConsumptionMultiplier;
+
+            if (sprintCooldownTimer < 0f) sprintCooldownTimer -= 0.3f;
+        }
+        else if (playerSprinting)
         {
             playerMoveState = MovementState.eSprinting;
             playerSpeed = playerWalkSpeed * playerSprintSpeedMultiplier;
@@ -129,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (sprintCooldownTimer < 0f) sprintCooldownTimer -= 0.3f;
         }
-        else if (movementKeysPressed && grounded)
+        else if (playerWalking)
         {
             playerMoveState = MovementState.eWalking;
             playerSpeed = playerWalkSpeed;
@@ -140,9 +222,10 @@ public class PlayerMovement : MonoBehaviour
             playerSpeed = playerWalkSpeed * airMultiplier;
         }
 
-        if (jumpButtonPressed && canJump)
+        if (playerJumping)
         {
-            Jump();
+            if (playerWallRunning) WallJump();
+            else Jump();
         }
 
         if (grounded) rb.drag = groundDrag;
@@ -153,10 +236,13 @@ public class PlayerMovement : MonoBehaviour
             jumpCooldownTimer -= Time.deltaTime;
         }
 
+        if (wallRunningCooldownTimer > 0f) wallRunningCooldownTimer -= Time.deltaTime;
+
         bool playerIsNotSprinting = playerMoveState != MovementState.eSprinting;
         bool playerSprintNotRefilled = sprintCooldownTimer < playerSprintDuration;
+        bool playerRecoversSprint = playerIsNotSprinting && playerSprintNotRefilled;
 
-        if (playerIsNotSprinting && playerSprintNotRefilled)
+        if (playerRecoversSprint)
         {
             sprintCooldownTimer += Time.deltaTime * playerSprintCooldownMultiplier;
         }
@@ -171,20 +257,48 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(sprintCooldownTimer);
-        bool movementKeysHaveBeenPressed = (verticalInput != 0) || (horizontalInput != 0);
+        rb.useGravity = true;
 
-        if (movementKeysHaveBeenPressed)
+        if (movementKeysPressed)
         {
             Vector3 moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
 
+            float verticalVelocity = rb.velocity.y;
+
+            if (playerMoveState == MovementState.eWallRunning)
+            {
+                Vector3 wallNormal = rightWallHit ? rightWallRaycastHit.normal : leftWallRaycastHit.normal;
+
+                Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
+
+                if ((transform.forward - wallForward).magnitude > (transform.forward + wallForward).magnitude) wallForward = -wallForward;
+
+                moveDirection = wallForward;
+
+                rb.useGravity = false;
+                verticalVelocity = 0f;
+            }
+            else if (OnSlope())
+            { 
+                moveDirection = SlopeMovementDirection(moveDirection, slopeHit.normal);
+            }
+
+
             rb.AddForce(moveDirection.normalized * playerSpeed * 10f, ForceMode.Force);
 
-            if (rb.velocity.magnitude > playerMaxSpeed) rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -playerMaxSpeed, playerMaxSpeed), rb.velocity.y, Mathf.Clamp(rb.velocity.z, -playerMaxSpeed, playerMaxSpeed));
+            float maximumAllowedSpeed = playerMaxSpeed;
+
+            if (playerMoveState == MovementState.eSprinting) maximumAllowedSpeed *= playerSprintSpeedMultiplier;
+
+            if (rb.velocity.magnitude > maximumAllowedSpeed) rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maximumAllowedSpeed, maximumAllowedSpeed), verticalVelocity, Mathf.Clamp(rb.velocity.z, -maximumAllowedSpeed, maximumAllowedSpeed));
         }
 
         bool playerHasMoved = playerPosition.Get() != transform.position;
 
         if (playerHasMoved) playerPosition.Set(transform.position);
+
+        playerActualSpeed = rb.velocity;
     }
+
+   
 }
