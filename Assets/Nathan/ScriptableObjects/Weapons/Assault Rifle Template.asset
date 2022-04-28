@@ -21,5 +21,5 @@ MonoBehaviour:
   weaponClipSize: 30
   weaponClipReloadTime: 1
   bulletSpreadAngle: {x: 0, y: 0}
-  weaponModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  weaponModelPrefab: {fileID: 1547535016723388239, guid: 7c6abe24444a5ac4dbb481f1dcad87d3, type: 3}
   bulletData: {fileID: 11400000, guid: 427fc49eac5b10e48bfeee5ff65a7e74, type: 2}

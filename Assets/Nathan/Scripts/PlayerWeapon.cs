@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer))]
-[RequireComponent(typeof(MeshFilter))]
+
 public class PlayerWeapon : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,6 +16,8 @@ public class PlayerWeapon : MonoBehaviour
     MeshRenderer mr;
     MeshFilter mf;
 
+    GameObject weaponModel;
+
     float fireTimer;
 
     bool canFire;
@@ -29,21 +30,20 @@ public class PlayerWeapon : MonoBehaviour
 
     void Start()
     {
-        mr = GetComponent<MeshRenderer>();
-        mf = GetComponent<MeshFilter>();
         projectileSpawnerScript = GetComponent<Stuart.Scripts.Projectiles.ProjectileSpawner>();
-
-        mf.mesh = selectedWeapon.weaponTemplate.weaponModel;
 
         selectedWeapon.clipAmount = selectedWeapon.weaponTemplate.weaponClipSize;
 
+        weaponModel = Instantiate(selectedWeapon.weaponTemplate.weaponModelPrefab, transform, false);
+
         burstFireDone = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       
         bool clipHasAmmo = selectedWeapon.clipAmount > 0;
         bool fireTimerDone = fireTimer <= 0f;
         bool canReload = fireTimerDone && burstFireDone;

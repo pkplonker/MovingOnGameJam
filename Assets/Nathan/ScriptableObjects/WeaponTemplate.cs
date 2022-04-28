@@ -30,7 +30,7 @@ public class WeaponTemplate : ScriptableObject
 
     public Vector2 bulletSpreadAngle;
 
-    public Mesh weaponModel;
+    public GameObject weaponModelPrefab;
 
     public Stuart.Scripts.SO.ProjectileData bulletData;
 }

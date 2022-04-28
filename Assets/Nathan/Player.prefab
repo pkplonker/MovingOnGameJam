@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2313533111656870423}
-  - component: {fileID: 2313533111656870408}
-  - component: {fileID: 2313533111656870409}
   - component: {fileID: 2313533111656870411}
   - component: {fileID: 2313533111656870410}
   m_Layer: 13
@@ -34,56 +32,6 @@ Transform:
   m_Father: {fileID: 2313533111920926400}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2313533111656870408
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2313533111656870420}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2313533111656870409
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2313533111656870420}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 86d7d57466c25aa48b46db6f6b94b098, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2313533111656870411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +104,6 @@ GameObject:
   - component: {fileID: 2313533111920926402}
   - component: {fileID: 2313533111920926414}
   - component: {fileID: 1137546104}
-  - component: {fileID: 7043427598634571892}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
@@ -298,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606bd9e4d4f649d4aa88ce3f218e6501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {x: 0, y: 1.5, z: 0}
+  cameraOffset: {x: 0, y: 0.5, z: 0}
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
   sensitivity: 600
@@ -319,22 +266,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 9663ebb87a9f67f4084e006d63f239c2, type: 2}
---- !u!114 &7043427598634571892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2313533111920926415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98bb4e9ef5c72ac4fbe0fb4ac672387c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bloomIntensityLow: 3
-  bloomIntensityHigh: 4
-  changeSpeed: 2
-  bloom: {fileID: 0}
 --- !u!1 &2313533112010370972
 GameObject:
   m_ObjectHideFlags: 0
