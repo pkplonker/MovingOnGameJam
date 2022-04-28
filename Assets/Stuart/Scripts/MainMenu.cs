@@ -27,6 +27,8 @@ namespace Stuart.Scripts
         public void Highscores()
         {
             Debug.Log("Open Highscores");
+            SceneManager.LoadScene("Highscores");
+
         }
 
         public void Exit()
