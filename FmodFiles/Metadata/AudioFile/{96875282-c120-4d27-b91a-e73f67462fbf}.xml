@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{96875282-c120-4d27-b91a-e73f67462fbf}">
+		<property name="assetPath">
+			<value>Weapons/Assault Rifle/Assault_rifle_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.52563541666666669</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{aaae599d-50ea-4a77-834c-9134b0c08f21}</destination>
+		</relationship>
+	</object>
+</objects>
