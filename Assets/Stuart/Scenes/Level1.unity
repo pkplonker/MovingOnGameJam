@@ -6460,6 +6460,9 @@ MonoBehaviour:
   playerActualSpeed: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
+  crouchScale: 0
+  crouchMultiplier: 0
+  crouchCooldown: 0
   currentSlopeAngle: 0
 --- !u!114 &1026450218
 MonoBehaviour:
@@ -12853,6 +12856,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec7ea6352ab5ac48b278d25df9b0266, type: 3}
+--- !u!1 &2756058473296118249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756058472876580068, guid: cec7ea6352ab5ac48b278d25df9b0266, type: 3}
+  m_PrefabInstance: {fileID: 2756058473296118248}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2756058473296118250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756058473296118249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f35487ad4ead64ebdf2030067d7c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 8668684665097154822, guid: 4b5c399dbd82a67499680bf4cfc4a4ef, type: 3}
+  initialQuantity: 20
+  maxPoolSize: 200
 --- !u!4 &2768346735446795247
 Transform:
   m_ObjectHideFlags: 0

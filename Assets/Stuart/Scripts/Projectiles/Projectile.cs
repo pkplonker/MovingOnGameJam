@@ -67,11 +67,20 @@ namespace Stuart.Scripts.Projectiles
 		protected virtual void HandleMovement()
 		{
 			if (data.isTracking)
+			{
 				transform.position =
 					Vector3.MoveTowards(transform.position, target.position, data.speed * Time.deltaTime);
+			}
+
 			else
+			{
 				transform.position =
 					Vector3.MoveTowards(transform.position, cachedTargetPos, data.speed * Time.deltaTime);
+				
+			}
+			transform.LookAt(data.isTracking?  target.position:cachedTargetPos,Vector3.up);
+			transform.eulerAngles += new Vector3(0, -90, 0);
+
 		}
 
 		private void HandleHitVFX()
