@@ -15,6 +15,8 @@ namespace Stuart.Scripts.Enemy
 		private BaseState currentState;
 		[SerializeField] private Transform target;
 		[SerializeField] Transform shootPoint;
+		[SerializeField] Transform shootPoint2;
+
 		[SerializeField] private LayerMask playerLayer;
 		public NavMeshAgent agent { get; private set; }
 		public BaseState idleState { get; } = new IdleState();
@@ -32,6 +34,7 @@ namespace Stuart.Scripts.Enemy
 
 		public Transform GetTarget() => target;
 		public Transform GetShootPoint() => shootPoint;
+		public Transform GetShootPoint2() => shootPoint2;
 
 		private void Awake()
 		{

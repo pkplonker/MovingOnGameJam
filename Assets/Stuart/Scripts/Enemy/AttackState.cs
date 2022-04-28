@@ -25,7 +25,9 @@ namespace Stuart.Scripts.Enemy
 				if (Time.time - lastAttackTime > controller.stats.combat.attackSpeed)
 				{
 					lastAttackTime = Time.time;
-					Shoot();
+					Shoot(controller.GetShootPoint());
+					Shoot(controller.GetShootPoint2());
+
 				}
 			}
 			else if (controller.PlayerInChaseRange())
@@ -43,9 +45,10 @@ namespace Stuart.Scripts.Enemy
 		{
 		}
 
-		public void Shoot()
+		public void Shoot(Transform shootPoint)
 		{
-			controller.projectileSpawner.SpawnProjectile(controller.GetShootPoint().position, controller.GetTarget(),
+			if (shootPoint == null) return;
+			controller.projectileSpawner.SpawnProjectile(shootPoint.position, controller.GetTarget(),
 				controller.stats.combat.projectileData, controller.shooterTeam);
 		}
 	}

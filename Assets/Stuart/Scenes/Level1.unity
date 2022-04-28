@@ -9120,6 +9120,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7043427598634571892, guid: ec843eed8c9ab68449d19954fe30b05e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec843eed8c9ab68449d19954fe30b05e, type: 3}
 --- !u!4 &1766436691
@@ -12244,6 +12248,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1884581448, guid: cec7ea6352ab5ac48b278d25df9b0266, type: 3}
+      propertyPath: changeSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884581448, guid: cec7ea6352ab5ac48b278d25df9b0266, type: 3}
+      propertyPath: neonIntensityLow
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884581448, guid: cec7ea6352ab5ac48b278d25df9b0266, type: 3}
+      propertyPath: neonIntensityHigh
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2756058472193628317, guid: cec7ea6352ab5ac48b278d25df9b0266, type: 3}
       propertyPath: m_Name
       value: Managers

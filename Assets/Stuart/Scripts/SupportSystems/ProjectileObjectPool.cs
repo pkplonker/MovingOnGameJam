@@ -17,7 +17,6 @@ namespace Stuart.Scripts.SupportSystems
             }
             else if(instance!=this)
             {
-                Debug.LogWarning("Destroying" + this + " on gameObject " + gameObject.name + " due to singleton");
                 Destroy(this);
             }
             #endregion
