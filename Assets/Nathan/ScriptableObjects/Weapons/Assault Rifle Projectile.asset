@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdc43ada44d7364a9166b3436542efd, type: 3}
   m_Name: Assault Rifle Projectile
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 30
   speed: 30
   isTracking: 0
   lifeTime: 3.3
