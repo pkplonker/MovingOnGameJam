@@ -8,7 +8,6 @@ namespace Stuart.Scripts.Projectiles
 	{
 		public void SpawnProjectile(Vector3 spawnPoint, Transform target, ProjectileData data, int shooterTeam)
 		{
-			Debug.Log("Spawn projectile");
 			GameObject newObj = ProjectileObjectPool.instance.GetObject(spawnPoint, Quaternion.identity, data);
 			newObj.GetComponent<Projectile>().InitProjectile(data, target, shooterTeam);
 			/*
@@ -18,7 +17,6 @@ namespace Stuart.Scripts.Projectiles
 		
 		public void SpawnProjectile(Vector3 spawnPoint, Vector3 target, ProjectileData data, int shooterTeam)
 		{
-			Debug.Log("Spawn projectile");
 			GameObject newObj = PlayerProjectileObjectPool.instance.GetObject(spawnPoint, Quaternion.identity, data);
 			newObj.GetComponent<Projectile>().InitProjectile(data, target, shooterTeam);
 			/*

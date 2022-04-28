@@ -22,7 +22,6 @@ namespace Stuart.Scripts.Enemy
 					Quaternion.LookRotation(direction,
 						controller.transform.up);
 				//controller.agent.updateRotation = true;
-				Debug.Log("Attack");
 				if (Time.time - lastAttackTime > controller.stats.combat.attackSpeed)
 				{
 					lastAttackTime = Time.time;

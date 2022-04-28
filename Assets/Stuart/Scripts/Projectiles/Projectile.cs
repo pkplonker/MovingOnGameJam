@@ -47,6 +47,10 @@ namespace Stuart.Scripts.Projectiles
 		{
 			if (other.CompareTag("Projectile")) return;
 			Damageable damageable = other.transform.root.GetComponent<Damageable>();
+			if (damageable == null)
+			{ damageable = other.transform.root.GetComponentInChildren<Damageable>();
+
+			}
 			if (damageable != null && damageable.teamId != shooterTeam)
 			{
 				damageable.TakeDamage(data.damage);

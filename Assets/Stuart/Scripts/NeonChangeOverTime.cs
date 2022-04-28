@@ -13,7 +13,7 @@ namespace Stuart.Scripts
         [SerializeField] private Material neonMaterial;
 
         [SerializeField] LevelAesteticData levelAesteticData;
-        private void Update()
+        /*private void Update()
         {
             if (levelAesteticData.neonIntensity<=neonIntensityHigh)
             {
@@ -26,6 +26,6 @@ namespace Stuart.Scripts
                     Mathf.Lerp(neonIntensityHigh, neonIntensityLow, changeSpeed * Time.deltaTime);
             }
          
-        }
+        }*/
     }
 }

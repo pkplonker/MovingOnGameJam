@@ -12,11 +12,9 @@ namespace Stuart.Scripts.Enemy
 
 		public override void StateUpdate()
 		{
-			Debug.Log("Chase");
 
 			if (controller.PlayerInAttackRange())
 			{
-				Debug.Log("in attack range");
 				controller.agent.ResetPath();
 				controller.ChangeState(controller.attackState);
 			}

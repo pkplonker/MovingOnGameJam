@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2756058472876580069}
   - component: {fileID: 2756058472876580070}
+  - component: {fileID: 2756058473296118250}
   m_Layer: 0
   m_Name: Pool
   m_TagString: Untagged
@@ -77,6 +78,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 8668684665097154822, guid: 45e7818113c73a64e9d0253d368adf5e, type: 3}
+  initialQuantity: 20
+  maxPoolSize: 200
+--- !u!114 &2756058473296118250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756058472876580068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f35487ad4ead64ebdf2030067d7c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 8668684665097154822, guid: 4b5c399dbd82a67499680bf4cfc4a4ef, type: 3}
   initialQuantity: 20
   maxPoolSize: 200
 --- !u!1 &2756058473250275546
@@ -173,6 +189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neonIntensityLow: 1
   neonIntensityHigh: 2
-  changeSpeed: 2
+  changeSpeed: 1
   neonMaterial: {fileID: 2100000, guid: 858ebc203b73ee54aa3012b0db60cbe5, type: 2}
   levelAesteticData: {fileID: 11400000, guid: 040f61ca7980bb64d8f0c8b483ba357f, type: 2}

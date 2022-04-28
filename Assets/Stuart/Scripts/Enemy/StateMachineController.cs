@@ -96,7 +96,6 @@ namespace Stuart.Scripts.Enemy
 					stats.combat.attackRadius, playerLayer))
 				{
 					if (hit.collider.transform == target) return true;
-					Debug.Log("no los to player");
 				}
 			}
 

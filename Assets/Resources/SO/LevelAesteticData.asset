@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32809e6b8725ef34c98a48b9282866a1, type: 3}
   m_Name: LevelAesteticData
   m_EditorClassIdentifier: 
-  neonIntensity: 1
+  neonIntensity: 1.0056405
