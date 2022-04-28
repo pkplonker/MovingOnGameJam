@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3803110785409567426}
   - component: {fileID: 3803110785409567427}
   - component: {fileID: 3803110785409567436}
+  - component: {fileID: -7506858843907592415}
   m_Layer: 11
   m_Name: Smoke
   m_TagString: Untagged
@@ -4806,3 +4807,33 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-7506858843907592415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803110785409567437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -360102448
+      Data2: 1252780346
+      Data3: 1723463829
+      Data4: 934188839
+    Path: event:/Ambiance/Vent_steam
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
