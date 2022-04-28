@@ -16,13 +16,13 @@ namespace Stuart.Scripts
       
         private void Update()
         {
-            ChangeBloomIntensitySettings();
+          //  ChangeBloomIntensitySettings();
         }
         private void ChangeBloomIntensitySettings()
         {
            
             
-            //var postProcessVolume = FindObjectOfType<PostProcessVolume>();
+            /*var postProcessVolume = FindObjectOfType<PostProcessVolume>();
             var postProcessVolume = GetComponent<Volume>();
             if (postProcessVolume == null)
             {
@@ -36,7 +36,8 @@ namespace Stuart.Scripts
 
             bloom.intensity = intensity;
             bloom.intensity.value = intensity.value;
-            bloom.enabled.value = true;   
+            bloom.enabled.value = true;  
+            */ 
         }
     }
 }

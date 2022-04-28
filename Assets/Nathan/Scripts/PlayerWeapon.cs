@@ -57,7 +57,6 @@ public class PlayerWeapon : MonoBehaviour
                 fireTimer += selectedWeapon.weaponTemplate.weaponRateOfFire;
                 GenerateBullet();
 
-                Debug.Log("MANUAL FIRE!");
 
                 selectedWeapon.clipAmount -= 1;
             }
@@ -66,7 +65,6 @@ public class PlayerWeapon : MonoBehaviour
                 burstFireDone = false;
                 burstFireCount = 0;
 
-                Debug.Log("BURST FIRE BEGIN!");
 
                 selectedWeapon.clipAmount -= 1;
             }
@@ -75,7 +73,6 @@ public class PlayerWeapon : MonoBehaviour
                 fireTimer += selectedWeapon.weaponTemplate.weaponRateOfFire;
                 GenerateBullet();
 
-                Debug.Log("AUTO FIRE!");
 
                 selectedWeapon.clipAmount -= 1;
             }
@@ -87,14 +84,12 @@ public class PlayerWeapon : MonoBehaviour
 
             if (canBurstFire)
             {
-                Debug.Log("BURST FIRE!");
                 fireTimer += selectedWeapon.weaponTemplate.weapomSemiAutoDelay;
                 burstFireCount += 1;
                 GenerateBullet();
             }
             else if (firedBurstAmount || !clipHasAmmo)
             {
-                Debug.Log("BURST FIRE DONE!");
                 burstFireDone = true;
                 fireTimer += selectedWeapon.weaponTemplate.weaponRateOfFire;
             }
