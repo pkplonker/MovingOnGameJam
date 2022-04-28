@@ -241,7 +241,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2313533111920926414}
         m_TargetAssemblyTypeName: PlayerCamera, Assembly-CSharp
         m_MethodName: UpdateCameraPosition
         m_Mode: 1
@@ -331,11 +331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98bb4e9ef5c72ac4fbe0fb4ac672387c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neonIntensityLow: 3
-  neonIntensityHigh: 4
+  bloomIntensityLow: 3
+  bloomIntensityHigh: 4
   changeSpeed: 2
-  neonMaterial: {fileID: 2100000, guid: 858ebc203b73ee54aa3012b0db60cbe5, type: 2}
-  levelAesteticData: {fileID: 11400000, guid: 040f61ca7980bb64d8f0c8b483ba357f, type: 2}
+  bloom: {fileID: 0}
 --- !u!1 &2313533112010370972
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,9 +493,9 @@ MonoBehaviour:
   playerActualSpeed: {x: 0, y: 0, z: 0}
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
-  crouchScale: 0
-  crouchMultiplier: 0
-  crouchCooldown: 0
+  crouchScale: 0.5
+  crouchMultiplier: 0.5
+  crouchCooldown: 0.1
   currentSlopeAngle: 0
 --- !u!54 &2313533112010370962
 Rigidbody:
