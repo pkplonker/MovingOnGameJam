@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverData: {fileID: 11400000, guid: 17b0af248353ff34ba14e6a74535f683, type: 2}
   highscoresUIPrefab: {fileID: 6930806905876291221, guid: a0404510e54b99c4fa9b3938f5371104, type: 3}
+  highscoresUIBlankPrefab: {fileID: 6930806905876291221, guid: ab643b12efd33764d8c485377a7aaf12, type: 3}
   entryUIContainer: {fileID: 1954780648}
   numberOfScoresToDisplay: 5
 --- !u!1 &1433074322
@@ -531,10 +532,10 @@ RectTransform:
   m_Father: {fileID: 2119066660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -71}
-  m_SizeDelta: {x: 600, y: 875}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -79.49996}
+  m_SizeDelta: {x: 600, y: -211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433074324
 MonoBehaviour:

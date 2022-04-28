@@ -11,6 +11,8 @@ namespace Stuart.Scripts
     {
         [SerializeField] private GameOverData gameOverData;
         [SerializeField] private GameObject highscoresUIPrefab;
+        [SerializeField] private GameObject highscoresUIBlankPrefab;
+
         [SerializeField] private Transform entryUIContainer;
         private List<ScoreData> top5Scores = new List<ScoreData>();
         private List<GameObject> highscoreUIObjects = new List<GameObject>();
@@ -39,7 +41,6 @@ namespace Stuart.Scripts
             if (top5Scores.Count > 1)
             {
                 top5Scores.Reverse(0, top5Scores.Count);
-
             }
             if (gameOverData.scoreDatas.Count > 5)
             {
@@ -62,6 +63,12 @@ namespace Stuart.Scripts
               HighscoresEntry entry = Instantiate(highscoresUIPrefab, entryUIContainer).GetComponent<HighscoresEntry>();
               highscoreUIObjects.Add(entry.gameObject);
               entry.Init(scores);
+            }
+
+            for (int i = 0; i < numberOfScoresToDisplay-top5Scores.Count; i++)
+            {
+                HighscoresEntry entry = Instantiate(highscoresUIBlankPrefab, entryUIContainer).GetComponent<HighscoresEntry>();
+                highscoreUIObjects.Add(entry.gameObject);
             }
         }
     }
