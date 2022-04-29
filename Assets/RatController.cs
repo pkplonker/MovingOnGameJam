@@ -51,6 +51,8 @@ public class RatController : MonoBehaviour
    private void Explode(float distance)
    {
       exploded = true;
+      agent.SetDestination(transform.position);
+      agent.isStopped = true;
       Damageable damageable = player.GetComponent<Damageable>();
       if (damageable != null)
       {
