@@ -15,11 +15,13 @@ namespace Stuart.Scripts.Enemy
 
 			if (controller.PlayerInAttackRange())
 			{
+
 				controller.agent.ResetPath();
 				controller.ChangeState(controller.attackState);
 			}
 			else if (controller.PlayerInChaseRange())
 			{
+
 				controller.agent.SetDestination(controller.GetTarget().position);
 			}
 			else

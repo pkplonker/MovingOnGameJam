@@ -14,7 +14,6 @@ namespace Stuart.Scripts.Enemy
 
 		public override void StateUpdate()
 		{
-			Debug.Log("Death");
 			
 			currentDeathTime += Time.deltaTime;
 			if (currentDeathTime > 2.5f)

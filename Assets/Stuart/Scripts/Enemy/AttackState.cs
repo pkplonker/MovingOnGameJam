@@ -14,6 +14,7 @@ namespace Stuart.Scripts.Enemy
 
 		public override void StateUpdate()
 		{
+
 			if (controller.PlayerInAttackRange())
 			{
 				Vector3 direction = -(controller.transform.position - controller.GetTarget().position).normalized;
