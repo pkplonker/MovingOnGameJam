@@ -44,7 +44,7 @@ namespace Stuart.Scripts.Enemy
 			damageable = GetComponent<Damageable>();
 			projectileSpawner = GetComponent<ProjectileSpawner>();
 			shooterTeam = GetComponent<Damageable>().teamId;
-			enemyDamageable = target.GetComponent<Damageable>();
+			enemyDamageable = target.gameObject.GetComponent<Damageable>();
 		}
 
 		private void OnEnable()
