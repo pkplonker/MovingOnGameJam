@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2313533111656870423}
   - component: {fileID: 2313533111656870411}
   - component: {fileID: 2313533111656870410}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: Player Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2313533111656870420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: -0.25, z: 1}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2313533111920926400}
   m_RootOrder: 0
@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b595d4131366df2498738293d20b0f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: {fileID: 11400000, guid: 7a51c8d091039e149b7a9a022b9dbc2f, type: 2}
+  selectableWeapon:
+  - {fileID: 11400000, guid: 7a51c8d091039e149b7a9a022b9dbc2f, type: 2}
+  - {fileID: 11400000, guid: f329d24ff95b5904bbc9b49909099e0a, type: 2}
+  selectedWeaponClip: {fileID: 11400000, guid: 6ba93b11bbb7ef34eb30eabf8567d54a, type: 2}
   crosshairTarget: {fileID: 2313533112065495625}
 --- !u!114 &2313533111656870410
 MonoBehaviour:
@@ -67,7 +70,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2313533111668854319}
-  m_Layer: 0
+  - component: {fileID: 1876400410}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +94,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876400410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313533111668854316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4086c452dc6224b9abcff20c74e9fee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputsound:
+    Guid:
+      Data1: -174404270
+      Data2: 1212983327
+      Data3: 1218335926
+      Data4: 1347181987
+    Path: event:/Player/Footsteps
+  walkingspeed: 0.5
+  runningspeed: 0.3
 --- !u!1 &2313533111920926415
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +129,10 @@ GameObject:
   - component: {fileID: 2313533111920926402}
   - component: {fileID: 2313533111920926414}
   - component: {fileID: 1137546104}
-  m_Layer: 0
+  - component: {fileID: 1402130875}
+  - component: {fileID: 1402130876}
+  - component: {fileID: 1402130877}
+  m_Layer: 6
   m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -266,6 +294,84 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 9663ebb87a9f67f4084e006d63f239c2, type: 2}
+--- !u!114 &1402130875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313533111920926415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
+--- !u!114 &1402130876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313533111920926415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1750203228
+      Data2: 1122383675
+      Data3: 217101210
+      Data4: -288117760
+    Path: event:/Ambiance/Room_tone
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &1402130877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313533111920926415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -289153774
+      Data2: 1088487426
+      Data3: 1887678127
+      Data4: 493472837
+    Path: event:/Soundtrack/Music
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Health
+    Value: 0
+  - Name: Intensity
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2313533112010370972
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +389,7 @@ GameObject:
   - component: {fileID: 2313533112010370962}
   - component: {fileID: 2313533112010370964}
   - component: {fileID: 3293640010974649725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -422,6 +528,7 @@ MonoBehaviour:
   playerWallDepthCheck: 0.7
   groundDrag: 5
   playerActualSpeed: {x: 0, y: 0, z: 0}
+  playerSprint: {fileID: 11400000, guid: e38f117b8b30c2145b063659b99ecbc1, type: 2}
   playerPosition: {fileID: 11400000, guid: 611762e2898fedd478bc71ea4b68a935, type: 2}
   playerRotation: {fileID: 11400000, guid: e290ee4edc43ab94ca9d954dba3b7bfb, type: 2}
   crouchScale: 0.5
@@ -497,7 +604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2313533112065495625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +636,7 @@ GameObject:
   - component: {fileID: 2313533112311085592}
   - component: {fileID: 2313533112311085597}
   - component: {fileID: 2313533112311085595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +743,7 @@ GameObject:
   - component: {fileID: 2313533112687294346}
   - component: {fileID: 2313533112687294351}
   - component: {fileID: 2313533112687294348}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Simple Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
