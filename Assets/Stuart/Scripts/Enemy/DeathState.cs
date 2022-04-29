@@ -15,16 +15,23 @@ namespace Stuart.Scripts.Enemy
 		public override void StateUpdate()
 		{
 			Debug.Log("Death");
+			
 			currentDeathTime += Time.deltaTime;
-			if (currentDeathTime > 2)
+			if (currentDeathTime > 2.5f)
 			{
 				controller.DestroySelf();
 			}
 			else
 			{
-				controller.transform.localScale = Vector3.Lerp(controller.transform.localScale, Vector3.zero,
-					1f * Time.deltaTime);
+			//	Shrink();
 			}
+		}
+
+		private void Shrink()
+		{
+			controller.transform.localScale = Vector3.Lerp(controller.transform.localScale, Vector3.zero,
+					1f * Time.deltaTime);
+			
 		}
 
 		public override void StateExit()
