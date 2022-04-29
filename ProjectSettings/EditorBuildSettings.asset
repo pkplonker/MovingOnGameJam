@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Stuart/Scenes/MainMenu.unity
     guid: 3a87c19d1e6b2f8498c4a45317623466
   - enabled: 1
+    path: Assets/Scenes/First Level.unity
+    guid: de216575f9683ef448fafd12bf3f3546
+  - enabled: 0
     path: Assets/Stuart/Scenes/Level1.unity
     guid: 8b784b77340e9014ba2658eb1803a4af
   - enabled: 1
