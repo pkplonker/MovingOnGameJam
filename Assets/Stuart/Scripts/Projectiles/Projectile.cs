@@ -45,7 +45,9 @@ namespace Stuart.Scripts.Projectiles
 
 		private void HandleCollision(Collider other)
 		{
-			if (other.CompareTag("Projectile")) return;
+			Debug.Log(other.gameObject.name);
+			if (other.CompareTag("Music")||other.CompareTag("Projectile")) return;
+		
 			Damageable damageable = other.transform.root.GetComponent<Damageable>();
 			if (damageable == null)
 			{ damageable = other.transform.root.GetComponentInChildren<Damageable>();
