@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a236c29b3037f49825dbb8a838fb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 8
+  detectionRange: 40
   explodeRange: 3
   damageAmount: 35
   vfx: {fileID: 3426952719575777966}
