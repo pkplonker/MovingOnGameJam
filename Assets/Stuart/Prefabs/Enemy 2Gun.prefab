@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1998454347122719434}
   - component: {fileID: 6699487087327348807}
   - component: {fileID: 6623272313441424119}
+  - component: {fileID: 1280603060}
   m_Layer: 9
   m_Name: Enemy 2Gun
   m_TagString: Enemy
@@ -135,6 +136,21 @@ MonoBehaviour:
   currentHealth: 1
   stats: {fileID: 11400000, guid: 8998da13336b6da41bdc36fb69dd75e2, type: 2}
   teamId: 1
+--- !u!114 &1280603060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877893290024097440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c9a8eb1a0d5394aa64a95bf5998f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveSpeed: 1.75
+  newValue: 0
+  shader: {fileID: -6465566751694194690, guid: c719db60457028148b12f89303f94fb3, type: 3}
 --- !u!1 &6789785619346768712
 GameObject:
   m_ObjectHideFlags: 0

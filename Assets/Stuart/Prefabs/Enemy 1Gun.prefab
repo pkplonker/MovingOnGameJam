@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6699487087327348807}
   - component: {fileID: 6623272313441424119}
   - component: {fileID: 8029571575933630089}
+  - component: {fileID: 491193672}
   m_Layer: 9
   m_Name: Enemy 1Gun
   m_TagString: Enemy
@@ -148,6 +149,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6400436, y: 2.19034, z: 1}
   m_Center: {x: -0.032971397, y: 1.0642321, z: 0}
+--- !u!114 &491193672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877893290024097440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c9a8eb1a0d5394aa64a95bf5998f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveSpeed: 1.75
+  newValue: 0
+  shader: {fileID: -6465566751694194690, guid: c719db60457028148b12f89303f94fb3, type: 3}
 --- !u!1001 &5612857775115624376
 PrefabInstance:
   m_ObjectHideFlags: 0
