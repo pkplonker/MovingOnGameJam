@@ -54,6 +54,35 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 26250
+--- !u!114 &-4167472505030319200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundtrack/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Soundtrack/Music
+  Guid:
+    Data1: -289153774
+    Data2: 1088487426
+    Data3: 1887678127
+    Data4: 493472837
+  Banks:
+  - {fileID: 4149713404553946419}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 984337108956675786}
+  - {fileID: -707987013372154327}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 80000
 --- !u!114 &-3640058427741951768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +164,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 330
+--- !u!114 &-707987013372154327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 1548008956
+    data2: 732793093
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,13 +215,38 @@ MonoBehaviour:
   - {fileID: -2605848594413370188}
   - {fileID: -3640058427741951768}
   - {fileID: -8399809980997649000}
+  - {fileID: -4167472505030319200}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4149713404553946419}
   StringsBanks:
   - {fileID: 6516969561922985579}
-  cacheTime: 637867798650000000
+  cacheTime: 637868256320000000
   cacheVersion: 10
+--- !u!114 &984337108956675786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 4044215537
+    data2: 3356071225
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1515964150073993154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,10 +343,10 @@ MonoBehaviour:
   Path: FmodFiles/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637867798650000000
+  lastModified: 637868256320000000
   FileSizes:
   - Name: Desktop
-    Value: 1332384
+    Value: 11936768
   Exists: 1
 --- !u!114 &5089672089137867600
 MonoBehaviour:
@@ -359,10 +437,10 @@ MonoBehaviour:
   Path: FmodFiles/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637867798650000000
+  lastModified: 637868256320000000
   FileSizes:
   - Name: Desktop
-    Value: 1240
+    Value: 1388
   Exists: 1
 --- !u!114 &7024773001954533994
 MonoBehaviour:
