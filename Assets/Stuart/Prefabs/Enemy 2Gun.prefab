@@ -44,6 +44,9 @@ GameObject:
   - component: {fileID: 6699487087327348807}
   - component: {fileID: 6623272313441424119}
   - component: {fileID: 1280603060}
+  - component: {fileID: 6528021717866068132}
+  - component: {fileID: 2389532320987298437}
+  - component: {fileID: -8176899837545456650}
   m_Layer: 9
   m_Name: Enemy 2Gun
   m_TagString: Enemy
@@ -151,6 +154,96 @@ MonoBehaviour:
   dissolveSpeed: 1.75
   newValue: 0
   shader: {fileID: -6465566751694194690, guid: c719db60457028148b12f89303f94fb3, type: 3}
+--- !u!114 &6528021717866068132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877893290024097440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 456758645
+      Data2: 1107401737
+      Data3: -634452350
+      Data4: -2104514557
+    Path: event:/Enemy/Enemy_voice
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
+--- !u!114 &2389532320987298437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877893290024097440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1309908155
+      Data2: 1278753824
+      Data3: 1881313460
+      Data4: -161716728
+    Path: event:/Enemy/Enemy_wheels
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
+--- !u!114 &-8176899837545456650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877893290024097440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1386884105
+      Data2: 1290465999
+      Data3: 1705328036
+      Data4: 614623123
+    Path: event:/Enemy/Enemy_explosion
+  Event: 
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
 --- !u!1 &6789785619346768712
 GameObject:
   m_ObjectHideFlags: 0
