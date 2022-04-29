@@ -23,7 +23,7 @@ namespace Stuart.Scripts.Projectiles
 			Invoke(nameof(DestroyObject), data.lifeTime);
 			cachedTargetPos = (target.position - transform.position) * 1000;
 		}
-		public void InitProjectile(ProjectileData data, Vector3 position, int shooterTeam)
+		public void InitProjectile(ProjectileData data, Vector3 direction, int shooterTeam)
 		{
 			this.data = data;
 			this.shooterTeam = shooterTeam;
@@ -32,10 +32,10 @@ namespace Stuart.Scripts.Projectiles
 				Debug.Log("Tracking requires transform not vector");
 				DestroyObject();
 			}
-				direction = position - transform.position;
-				direction = direction.normalized;
+
+			direction.Normalize();
 				Invoke(nameof(DestroyObject), data.lifeTime);
-				cachedTargetPos =position  * 100;
+				cachedTargetPos = direction * 1000;
 		}
 
 		private void OnTriggerEnter(Collider other)

@@ -21,7 +21,7 @@ namespace Stuart.Scripts
         public void Play()
         {
             Debug.Log("Play");
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("First Level");
         }
 
         public void Highscores()

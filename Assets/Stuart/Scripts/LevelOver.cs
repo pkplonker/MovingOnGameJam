@@ -17,7 +17,7 @@ namespace Stuart.Scripts
         [SerializeField] private TextMeshProUGUI overallScore;
         public void Restart()
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("First Level");
         }
         public void MainMenu()
         {
