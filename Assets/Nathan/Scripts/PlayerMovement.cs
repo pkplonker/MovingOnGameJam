@@ -70,6 +70,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 playerActualSpeed;
 
     [SerializeField]
+    FloatVariable playerSprint;
+
+    [SerializeField]
     Vector3Variable playerPosition;
 
     MovementState playerMoveState;
@@ -272,6 +275,8 @@ public class PlayerMovement : MonoBehaviour
         {
             sprintCooldownTimer += Time.deltaTime * playerSprintCooldownMultiplier;
         }
+
+        playerSprint.Set((sprintCooldownTimer) / playerSprintDuration);
     }
 
     // Update is called once per frame
