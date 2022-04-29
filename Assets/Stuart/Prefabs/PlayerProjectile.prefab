@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7394668745915826936}
   - component: {fileID: 2146927096956983981}
   - component: {fileID: 6043305621370454427}
+  - component: {fileID: -4963009111173961527}
   m_Layer: 8
   m_Name: PlayerProjectile
   m_TagString: Projectile
@@ -75,6 +76,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4963009111173961527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668684665097154822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 218206774
+      Data2: 1298199218
+      Data3: -1056070229
+      Data4: 709930237
+    Path: event:/Weapons/Assault_shot
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &9141569733215774269
 PrefabInstance:
   m_ObjectHideFlags: 0
