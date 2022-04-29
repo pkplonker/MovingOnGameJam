@@ -7,6 +7,17 @@ public class PlayerWeapon : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
+    List<Weapon> selectableWeapon;
+
+    List<KeyCode> weaponSelect = new List<KeyCode>{
+        KeyCode.Alpha1, 
+        KeyCode.Alpha2
+    };
+
+
+    [SerializeField]
+    IntVariable selectedWeaponClip;
+
     Weapon selectedWeapon;
 
     Stuart.Scripts.Projectiles.ProjectileSpawner projectileSpawnerScript;
@@ -31,7 +42,7 @@ public class PlayerWeapon : MonoBehaviour
     void Start()
     {
         projectileSpawnerScript = GetComponent<Stuart.Scripts.Projectiles.ProjectileSpawner>();
-
+        selectedWeapon = selectableWeapon[0];
         selectedWeapon.clipAmount = selectedWeapon.weaponTemplate.weaponClipSize;
 
         weaponModel = Instantiate(selectedWeapon.weaponTemplate.weaponModelPrefab, transform, false);
@@ -49,6 +60,21 @@ public class PlayerWeapon : MonoBehaviour
         bool canReload = fireTimerDone && burstFireDone;
 
         canFire = fireTimerDone && clipHasAmmo && burstFireDone;
+
+        int keyCount = 0;
+        foreach (var key in weaponSelect)
+        {
+            if (Input.GetKeyDown(key) && (selectableWeapon.Count - 1 >= keyCount) && canReload)
+            {
+                selectedWeapon = selectableWeapon[keyCount];
+                Destroy(weaponModel);
+                weaponModel = Instantiate(selectedWeapon.weaponTemplate.weaponModelPrefab, transform, false);
+
+            }
+
+            keyCount++;
+        }
+      
 
         if (Input.GetMouseButton(0) && canFire)
         {
@@ -102,12 +128,43 @@ public class PlayerWeapon : MonoBehaviour
         }
 
         if (!fireTimerDone) fireTimer -= Time.deltaTime;
+
+        if (selectedWeaponClip.Get() != selectedWeapon.clipAmount) selectedWeaponClip.Set(selectedWeapon.clipAmount);
     }
 
 
     void GenerateBullet()
     {
-        projectileSpawnerScript.SpawnProjectile(transform.position, transform.forward, selectedWeapon.weaponTemplate.bulletData, 0);
+        if(selectedWeapon.weaponTemplate.bulletSpreadShot)
+        { 
+            for (int i = 0; i < selectedWeapon.weaponTemplate.bulletSpreadAmount; i++)
+            {
+                Vector3 bulletDirection = transform.forward;
+
+                bulletDirection = Quaternion.Euler(
+                    Random.Range(
+                        -selectedWeapon.weaponTemplate.bulletSpreadAngle.x,
+                        selectedWeapon.weaponTemplate.bulletSpreadAngle.x
+                        ),
+                    Random.Range(
+                        -selectedWeapon.weaponTemplate.bulletSpreadAngle.y,
+                        selectedWeapon.weaponTemplate.bulletSpreadAngle.y
+                        ),
+                    Random.Range(
+                        -selectedWeapon.weaponTemplate.bulletSpreadAngle.z,
+                        selectedWeapon.weaponTemplate.bulletSpreadAngle.z
+                        )
+                    ) * bulletDirection;
+
+                Debug.Log(bulletDirection.normalized);
+
+                projectileSpawnerScript.SpawnProjectile(transform.position, bulletDirection.normalized, selectedWeapon.weaponTemplate.bulletData, 0);
+            }
+        }
+        else
+        {
+            projectileSpawnerScript.SpawnProjectile(transform.position, transform.forward, selectedWeapon.weaponTemplate.bulletData, 0);
+        }
     }
 
     void FixedUpdate()

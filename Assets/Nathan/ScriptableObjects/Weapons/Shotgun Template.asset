@@ -20,6 +20,8 @@ MonoBehaviour:
   weaponSemiAutoBurstAmount: 0
   weaponClipSize: 8
   weaponClipReloadTime: 1.2
-  bulletSpreadAngle: {x: 0, y: 0}
-  weaponModel: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-  bulletData: {fileID: 11400000, guid: 427fc49eac5b10e48bfeee5ff65a7e74, type: 2}
+  bulletSpreadShot: 1
+  bulletSpreadAmount: 6
+  bulletSpreadAngle: {x: 5, y: 5, z: 5}
+  weaponModelPrefab: {fileID: 937397825811818926, guid: 2317cf7d2f71f7d4db4630e0f91cf1e4, type: 3}
+  bulletData: {fileID: 11400000, guid: 88d41b1369725b648bb3ded6533e4b2e, type: 2}

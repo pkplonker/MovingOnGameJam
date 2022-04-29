@@ -28,7 +28,11 @@ public class WeaponTemplate : ScriptableObject
 
     public float weaponClipReloadTime;
 
-    public Vector2 bulletSpreadAngle;
+    public bool bulletSpreadShot;
+
+    public int bulletSpreadAmount;
+
+    public Vector3 bulletSpreadAngle;
 
     public GameObject weaponModelPrefab;
 
